@@ -11,13 +11,20 @@ struct NewsView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.news, id: \.id) { article in
-                VStack(alignment: .leading) {
-                    Text(article.title)
-                        .font(.headline)
-                    Text(article.description ?? "")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+            List(viewModel.news) { articleViewModel in
+                HStack(alignment: .center, spacing: 10) {
+                    if let imageURL = articleViewModel.imageURL {
+                        RemoteImage(url: imageURL)
+                            .frame(width: 100, height: 100)
+                    }
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(articleViewModel.title)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Text(articleViewModel.description ?? "")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
                 }
             }
             .navigationTitle("News")
@@ -33,3 +40,4 @@ struct ContentView_Previews: PreviewProvider {
         NewsView(viewModel: DefaultNewsViewModel(loader: URLSessionLoader()))
     }
 }
+

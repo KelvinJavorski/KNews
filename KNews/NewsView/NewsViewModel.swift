@@ -21,7 +21,7 @@ extension NewsViewModel {
 }
 
 class DefaultNewsViewModel: ObservableObject {
-    @Published var news: [Article] = []
+    @Published var news: [ArticleViewModel] = []
     private let loader: NewsLoader
     
     init(loader: NewsLoader) {
@@ -29,7 +29,7 @@ class DefaultNewsViewModel: ObservableObject {
     }
     
     func fetchNews() {
-        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=br&apiKey=c84e638215514dc0be569d78d049988d") else {
+        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=c84e638215514dc0be569d78d049988d") else {
             return
         }
         loader.fetchData(from: url) { result in
@@ -38,7 +38,7 @@ class DefaultNewsViewModel: ObservableObject {
                 case .success(let data):
                     do {
                         let response = try JSONDecoder().decode(NewsResponse.self, from: data)
-                        self.news = response.articles
+                        self.news = response.articles.map { ArticleViewModel(article: $0) }
                     } catch {
                         print("Error decoding JSON: \(error)")
                     }
@@ -47,5 +47,22 @@ class DefaultNewsViewModel: ObservableObject {
                 }
             }
         }
+    }
+}
+
+struct ArticleViewModel: Identifiable {
+    let id = UUID()
+    let article: Article
+    
+    var title: String {
+        return article.title
+    }
+    
+    var description: String? {
+        return article.description
+    }
+    
+    var imageURL: URL? {
+        return article.urlToImage
     }
 }

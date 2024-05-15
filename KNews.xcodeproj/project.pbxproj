@@ -19,6 +19,7 @@
 		B6FB523E2BF54C2B0055A096 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB523D2BF54C2B0055A096 /* NewsView.swift */; };
 		B6FB52402BF54E9F0055A096 /* NewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB523F2BF54E9F0055A096 /* NewsLoader.swift */; };
 		B6FB52422BF54EBD0055A096 /* URLSessionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB52412BF54EBD0055A096 /* URLSessionLoader.swift */; };
+		B6FB52462BF55F620055A096 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB52452BF55F620055A096 /* RemoteImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		B6FB523D2BF54C2B0055A096 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		B6FB523F2BF54E9F0055A096 /* NewsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLoader.swift; sourceTree = "<group>"; };
 		B6FB52412BF54EBD0055A096 /* URLSessionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionLoader.swift; sourceTree = "<group>"; };
+		B6FB52452BF55F620055A096 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				B6FB52362BF543AB0055A096 /* News.swift */,
 				B6FB523F2BF54E9F0055A096 /* NewsLoader.swift */,
 				B6FB52412BF54EBD0055A096 /* URLSessionLoader.swift */,
+				B6FB52452BF55F620055A096 /* RemoteImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				B6FB52372BF543AB0055A096 /* News.swift in Sources */,
 				B6A5A93F2BF44D6C0019CA42 /* ContentView.swift in Sources */,
 				B6A5A93D2BF44D6C0019CA42 /* KNewsApp.swift in Sources */,
+				B6FB52462BF55F620055A096 /* RemoteImage.swift in Sources */,
 				B6FB52402BF54E9F0055A096 /* NewsLoader.swift in Sources */,
 				B6FB52422BF54EBD0055A096 /* URLSessionLoader.swift in Sources */,
 				B6FB523E2BF54C2B0055A096 /* NewsView.swift in Sources */,
