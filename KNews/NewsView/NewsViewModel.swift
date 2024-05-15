@@ -29,7 +29,7 @@ class DefaultNewsViewModel: ObservableObject {
     }
     
     func fetchNews() {
-        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=br&apiKey=c84e638215514dc0be569d78d049988d") else {
+        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=br&apiKey=") else {
             return
         }
         loader.fetchData(from: url) { result in
